@@ -1,9 +1,6 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var uglify = require('gulp-uglify');
-var del = require('del');
-var jshint = require('gulp-jshint');
-var webReporter = require('gulp-hint-web-reporter');
 const zip = require('gulp-zip');
 
 var options = {
@@ -29,21 +26,11 @@ gulp.task('uglify' , function() {
 		.pipe(gulp.dest('dist'));	
 });
 
-gulp.task('lint', function() {
-  return gulp.src('src/*.js')
-    .pipe(jshint())
-    .pipe(webReporter(options));
-});
-
 gulp.task('zip',['imagemin' , 'uglify'], function(){
     gulp.src('src/*')
         .pipe(zip('myapp.zip'))
         .pipe(gulp.dest('dist'))
 });
-	
-gulp.task('clean:dist',['imagemin' , 'uglify'], function() {
-  return del.sync('dist');
-})
 
 gulp.task('default', ['lint','zip']);
 
