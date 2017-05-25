@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var webReporter = require('gulp-hint-web-reporter');
+const zip = require('gulp-zip');
 
 var options = {
     logsPath: "Reports/",
@@ -34,9 +35,15 @@ gulp.task('lint', function() {
     .pipe(webReporter(options));
 });
 
+gulp.task('zip',['imagemin' , 'uglify'], function(){
+    gulp.src('src/*')
+        .pipe(zip('myapp.zip'))
+        .pipe(gulp.dest('dist'))
+});
+	
 gulp.task('clean:dist',['imagemin' , 'uglify'], function() {
   return del.sync('dist');
 })
 
-gulp.task('default', ['lint','clean:dist']);
+gulp.task('default', ['lint','zip']);
 
