@@ -32,5 +32,5 @@ gulp.task('zip',['imagemin' , 'uglify'], function(){
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('default', ['lint','zip']);
+gulp.task('default', ['zip']);
 
