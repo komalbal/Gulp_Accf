@@ -20,6 +20,7 @@
     "gulp-sass": "^2.1.1",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
+    "gulp-zip": "^4.0.0",
     "jshint": "^2.9.4"
   },
   "scripts": {
