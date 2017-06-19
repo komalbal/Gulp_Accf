@@ -12,7 +12,7 @@
     "browser-sync": "^2.18.11",
     "del": "^2.2.2",
     "gulp-hint-web-reporter": "^1.1.4",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-imagemin": "^3.3.0",
     "gulp-jshint": "^2.0.4",
     "gulp-jshint-file-reporter": "0.0.2",
     "gulp-jshint-html-reporter": "^0.1.3",
